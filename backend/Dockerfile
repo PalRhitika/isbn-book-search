@@ -6,4 +6,4 @@ COPY requirements.txt .
 RUN pip install -r requirements.txt
 COPY . .
 EXPOSE 8000
-CMD ["gunicorn","isbn_api.wsgi:application","-b","0.0.0.0:8000","-w","3"]
+CMD ["gunicorn","isbn_book_search.wsgi:application","-b","0.0.0.0:8000","-w","3"]
