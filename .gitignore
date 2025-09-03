@@ -1,0 +1,30 @@
+# Python bytecode
+*.pyc
+__pycache__/
+
+# Virtual environment
+venv/
+env/
+
+# Database files
+db.sqlite3
+
+# Media and static files (if not served by a CDN or managed separately)
+media/
+static_collected/
+
+# Local settings and environment variables
+local_settings.py
+.env
+
+# Log files
+*.log
+
+# IDE and OS generated files
+.idea/
+.vscode/
+.cursor/
+.cursorignore
+
+.DS_Store
+Thumbs.db
