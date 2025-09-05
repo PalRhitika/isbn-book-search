@@ -13,7 +13,7 @@ Built as part of a full-stack developer assessment using **Django + React**.
 - 🐍 Django REST backend with clean API endpoint
 - 🐳 Docker-based workflow for backend
 - 📱 Responsive UI
-- 🚀 Deployed live (Fly.io for backend + Netlify for frontend)
+- 🚀 Deployed live (Render.com for backend + Netlify for frontend)
 
 ---
 
@@ -31,7 +31,7 @@ Built as part of a full-stack developer assessment using **Django + React**.
 **Other**
 - PostgreSQL (can run on SQLite locally for demo)
 - Docker + Docker Compose
-- Fly.io (backend deployment)
+- Render.com (backend deployment)
 - Netlify (frontend deployment)
 
 ---
@@ -86,7 +86,7 @@ npm install
 
 #### Create `.env` file
 ```bash
-VITE_API_BASE_URL=http://localhost:8000
+VITE_BOOKS_API_BASE_URL=http://localhost:8000
 ```
 
 #### Start development server
@@ -101,24 +101,30 @@ Frontend will be live at:
 
 ## 🌍 Deployment
 
-### Backend (Fly.io)
-```bash
-cd backend
-fly launch
-fly deploy
-```
+### Backend (Render)
+1. Go to Render → create a new Web Service.
+2. Connect your GitHub repo and select the backend folder as the root..
+3. Set the start command depending on your backend
+4. Add environment variable:
+   ```
+   GOOGLE_BOOKS_API_KEY="Your secret key here"
+   ```
+5. Deploy.
 
 Backend will be available at:
-👉 `https://your-app.fly.dev`
+👉 `https://your-backend.onrender.com`
 
 ### Frontend (Netlify)
-1. Push repo to GitHub.
-2. Import frontend folder in [Netlify](https://www.netlify.com/).
-3. Add environment variable:
+1. Import frontend folder in [Netlify](https://www.netlify.com/).
+2. Select the frontend folder as the root.
+3. Set build settings:
+   - Build command: npm run build
+   - Publish directory: dist
+4. Add environment variable:
    ```
-   VITE_API_BASE_URL=https://your-app.fly.dev
+   VITE_BOOKS_API_BASE_URL=https://your-backend.onrender.com
    ```
-4. Deploy.
+5. Deploy.
 
 Frontend will be available at:
 👉 `https://your-frontend.netlify.app`
@@ -134,11 +140,18 @@ Try these ISBNs in the app:
 - `9780061120084` → *To Kill a Mockingbird*
 
 ---
+## Demo Screenshots:
+ ### Home Page
+ ![Homes Page](screenshots/ss1.PNG)
+ ### Book Search Result
+ ![Book deatils Page](screenshots/ss2.PNG)
+
+---
 
 ## 🤖 AI & Tooling Transparency
 This project actively leveraged AI tools to improve productivity and quality:
 
-- **ChatGPT (OpenAI)** → scaffolding Django/React boilerplate, refining README, clarifying ISBN normalization (handling ISBN-10 vs ISBN-13, stripping dashes/spaces, and dealing with edge cases like trailing `X`), suggesting reliable public data sources (OpenLibrary, Google Books) when some ISBNs weren’t returning results
+- **ChatGPT (OpenAI)** → scaffolding Django/React boilerplate, refining README, clarifying ISBN normalization (handling ISBN-10 vs ISBN-13, stripping dashes/spaces, and dealing with edge cases like trailing `X`), suggesting reliable public data sources (OpenLibrary, Google Books) when some ISBNs weren’t returning results, configuring server settings and deployment.
 
 - **GitHub Copilot** → autocomplete for repetitive code patterns and React hooks
 

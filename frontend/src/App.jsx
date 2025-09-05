@@ -41,7 +41,7 @@ function App() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-100 to-slate-100 p-6">
       <div className="max-w-2xl mx-auto space-y-6">
-        <h1 className="text-3xl font-bold">ISBN Book Search</h1>
+        <h4 className="text-3xl font-bold md:text-4xl">ISBN Book Search</h4>
         <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3">
           <input
             type="text"

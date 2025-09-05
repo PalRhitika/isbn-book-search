@@ -6,10 +6,10 @@ export default function BookCard({ book }) {
           <img
             src={book.cover_image}
             alt={book.title || "cover"}
-            className="rounded-xl w-full object-cover"
+            className="h-[500px] rounded-xl w-full object-contain"
           />
         ) : (
-          <div className="h-[160px] bg-slate-100 rounded-xl grid place-items-center text-slate-400">
+          <div className="h-[200px] bg-slate-100 rounded-xl grid place-items-center text-slate-400">
             No cover
           </div>
         )}
